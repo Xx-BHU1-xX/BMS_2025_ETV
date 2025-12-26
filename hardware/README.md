@@ -6,4 +6,4 @@ Solution :- Offload processing to ESP32, retain slave comms with DC2026
 ESP32 (referenced to GLV) <- Isolated UART -> Linduino (referenced to TS)
 Additional features: - CAN comms, Redundant current sensor inputs (Hall (HBO300 fully differential) + Shunt (VAT4300 wireless))
 
-![BMS architecture](images/BMS.png)
+![BMS architecture](images/BMS.jpeg)
