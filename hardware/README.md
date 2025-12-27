@@ -27,4 +27,13 @@
 - **Linduino (DC2026)** is referenced to **TS**.
 - Communication between the two is via an **isolated UART**.
 
+---
+
+## Additional features
+- CAN communication for vehicle integration.
+- Redundant current sensing:
+  - Hall-effect sensor
+  - Shunt-based sensor
+
+
 ![BMS architecture](images/BMS.jpeg)
