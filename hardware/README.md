@@ -31,9 +31,9 @@
 
 ## Additional features
 - CAN communication for vehicle integration.
-- Redundant current sensing:
-  - Hall-effect sensor
-  - Shunt-based sensor
+- Redundant isolated current sensing:
+  - Hall-effect sensor (HBO300 fully differential)
+  - Shunt-based sensor (VAT4300 wireless)
 
 
 ![BMS architecture](images/BMS.jpeg)
