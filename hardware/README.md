@@ -18,7 +18,7 @@
 ### Revised architecture
 - High-level processing was offloaded to an **ESP32**.
 - The **DC2026** was retained only for reliable LTC6804 isoSPI communication.
-- Direct isoSPI from the ESP32 was avoided to keep hardware and isolation simpler.
+- Direct isoSPI from the ESP32 was avoided to keep hardware and isolation simpler (and to avoid porting the LTC sketchbook :)
 
 ---
 
