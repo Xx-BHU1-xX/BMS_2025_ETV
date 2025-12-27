@@ -8,8 +8,7 @@
 - Used **LTC6804-based slave boards (DC1894B)** with a **Linduino (DC2026)** as the isoSPI master.
 - The entire system ran on the **ATmega328P** on the DC2026.
 - SRAM was very limited (~2 KB), which was barely enough for:
-  - 72× cell voltages
-  - SOC variables
+  - 72× cell voltages, SOC, DCIR values
   - filtering / fault flags
 - This became the main bottleneck as features were added.
 
