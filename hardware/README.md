@@ -1,12 +1,30 @@
-Architecture '24 : - LTC6804 (DC1894B) 6 slaves + Linduino (DC2026) master
+# Battery Management System (BMS)
 
-Disadvantages: - atmega328p (2KB SRAM, barely sufficient for all 72x SOCs, CellVs…)
+---
 
-Architecture '25
+## Architecture evolution
 
-Solution :- Offload processing to ESP32, retain slave comms with DC2026
-ESP32 (referenced to GLV) <- Isolated UART -> Linduino (referenced to TS)
+### Earlier version
+- Used **LTC6804-based slave boards (DC1894B)** with a **Linduino (DC2026)** as the isoSPI master.
+- The entire system ran on the **ATmega328P** on the DC2026.
+- SRAM was very limited (~2 KB), which was barely enough for:
+  - 72× cell voltages
+  - SOC variables
+  - filtering / fault flags
+- This became the main bottleneck as features were added.
 
-Additional features: - CAN comms, Redundant current sensor inputs (Hall (HBO300 fully differential) + Shunt (VAT4300 wireless))
+---
+
+### Revised architecture
+- High-level processing was offloaded to an **ESP32**.
+- The **DC2026** was retained only for reliable LTC6804 isoSPI communication.
+- Direct isoSPI from the ESP32 was avoided to keep hardware and isolation simpler.
+
+---
+
+## Communication and isolation
+- **ESP32** is referenced to **GLV**.
+- **Linduino (DC2026)** is referenced to **TS**.
+- Communication between the two is via an **isolated UART**.
 
 ![BMS architecture](images/BMS.jpeg)
